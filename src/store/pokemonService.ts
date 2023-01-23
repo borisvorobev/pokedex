@@ -11,9 +11,12 @@ export const pokemonApi = createApi({
     getPokemonSpeciesByName: builder.query<PokemonSpecies, string>({
       query: (name) => `pokemon-species/${name}`,
     }),
+    searchPokemonByName: builder.mutation<Pokemon, string>({
+      query: (name) => `pokemon/${name}`,
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPokemonByNameQuery, useGetPokemonSpeciesByNameQuery } = pokemonApi;
+export const { useGetPokemonByNameQuery, useGetPokemonSpeciesByNameQuery, useSearchPokemonByNameMutation } = pokemonApi;
