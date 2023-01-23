@@ -7,10 +7,6 @@ export default () => (
       <Link to='/' className='to-home'>
         <img src="/assets/Pokédex_logo.png" alt='Back to Home' />
       </Link>
-
-      <button className='nes-btn is-primary to-history'>
-        Go to History
-      </button>
     </div>
   </nav>
 )

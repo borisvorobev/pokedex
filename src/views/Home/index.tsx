@@ -10,14 +10,14 @@ export default () => {
   const searchRef = useRef<HTMLInputElement>()
   const [searchPokemonByName, { isLoading, error }] = useSearchPokemonByNameMutation();
   let navigate = useNavigate();
-  
+
   const onSearchHandler = async (event) => {
     event.preventDefault();
 
     const pokemonName = searchRef.current?.value
     const response = await searchPokemonByName(pokemonName as string)
-    response.data && navigate(`/${pokemonName}`)
+    // @ts-ignore
+    if (!response.error)  navigate(`/${pokemonName}`)
   }
-  console.log({ isLoading, error })
   return <HomeLayout isLoading={isLoading} error={error} searchValue={searchRef as React.MutableRefObject<HTMLInputElement>} onSearchHandler={onSearchHandler} />
 }
