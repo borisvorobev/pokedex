@@ -1,69 +1,54 @@
 import React from 'react'
+import { Pokemon, PokemonSpecies } from '.'
+import NavBar from './NavBar'
 
-export default () => (
+interface PokemonLayoutProps {
+  pokemon: Pokemon
+  species?: PokemonSpecies
+}
+export default ({ pokemon, species }: PokemonLayoutProps) => (
   <div className=''>
-    <nav className='navbar'>
-      <div className='container'>
-        <span className='to-home'>
-          <img src="/assets/Pokédex_logo.png" alt='Back to Home' />
-        </span>
-
-        <button className='nes-btn is-primary to-history'>
-          Go to History
-        </button>
-      </div>
-    </nav>
+    <NavBar />
     <main className="container pokemon-information">
       <div className='sprite'>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png" alt="" />
+        <img src={pokemon.sprites?.other?.home?.front_default ?? pokemon.sprites?.front_default} alt={`${pokemon.name} sprite`} />
       </div>
       <div className='data'>
         <div className='quick-information bordered'>
           <div className='pokemon-name'>
             <img src="/assets/pokeball.png" alt="pokeball" />
-            <span className='pokemon-number'>000</span>
-            <span>Name</span>
+            <span className='pokemon-number'>{pokemon.id}</span>
+            <span>{pokemon.name}</span>
           </div>
           <p className='pokemon-description'>
-            a short description
+            {species?.flavor_text_entries[0].flavor_text}
           </p>
         </div>
         <div className='detailed-information'>
           <div className="item bordered">
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/moon-stone.png" alt="Item held" />
+            <img src={'https://archives.bulbagarden.net/media/upload/7/7f/Bag_Items_HGSS_pocket_icon.png'} alt={`${pokemon.heldItems[0].item.name ?? 'Item'} held`} />
           </div>
           <div className='stats'>
             <div className='pokemon-types'>
-              <a href="https://bulbapedia.bulbagarden.net/wiki/Normal_(type)" target="_blank" className="nes-badge">
-                <span className="is-warning">Normal</span>
-              </a>
-              <a href="https://bulbapedia.bulbagarden.net/wiki/Fire_(type)" target="_blank" className="nes-badge">
-                <span className="is-error">Fire</span>
-              </a>
+              {
+                pokemon.types.map(({type}, id) => (
+                  <div key={`pokemon-type-${type.name}-${id}`}>
+                    {type.name}
+                  </div>
+                ))
+              }
             </div>
             <div className="pokemon-stats bordered">
-              <span>HT</span>
+              <span>HT {pokemon.height}</span>
               <hr />
-              <span>WT</span>
+              <span>WT {pokemon.weight}</span>
             </div>
           </div>
         </div>
       </div>
       <div className='description bordered'>
         <p>
-          some text
-          dgbdl
-          asdblkshndfb
-          asdfgblhknsdf
-          awelghnslkhng
-          awelghna/sweg
-          awskjhn
-          asdvhn
-          asdvhnaslkdh
-          asdfgblhknsdf lahf
-          asdfgblhknsdfa
-          ah
-          lwsedh
+          {species?.form_descriptions[0].description}
         </p>
       </div>
     </main>
