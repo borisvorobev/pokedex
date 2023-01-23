@@ -14,7 +14,7 @@ export type Pokemon = {
   height: number;
   weight: number;
   abilities?: PokemonAbility[];
-  heldItems: Array<{ item: { name: string } }>;
+  held_items: Array<{ item: { name: string } }>;
   sprites?: PokemonSprites;
   types: Array<{ type: { name: string } }>;
 };
