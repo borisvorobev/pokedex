@@ -1,15 +1,9 @@
 // sass tools
-@import 
-"utilities/variables",
-"/node_modules/rfs/scss",
-"utilities/functions",
-"utilities/mixins";
+@import "utilities/variables", "/node_modules/rfs/scss", "utilities/functions",
+  "utilities/mixins";
 
 // global styles
-@import 
-"normalize.css",
-"leo-css-reset",
-"base/typography";
+@import "normalize.css", "leo-css-reset", "base/typography";
 
 // layout
 @import "layout/grid";
@@ -19,3 +13,12 @@
 
 // pages specific styles
 @import "pages/home";
+
+// Global
+body {
+  background: linear-gradient(
+    247.12deg,
+    color("supportLight2") -0.29%,
+    color("supportLight1") 100%
+  );
+}
