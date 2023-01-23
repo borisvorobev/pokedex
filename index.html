@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- end -->
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- end -->
+
+    <!-- metadata -->
+    <link rel="canonical" href="https://github.com/borisvorobev/pokedex" />
+    <meta name="author" content="Boris Vorobev" />
+    <meta name="generator" content="Visual Studio Code" />
+    <meta name="description" content="A simple pokédex made with React & PokéAPI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Open Graph protocol -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="pokedex" />
+    <meta property="og:title" content="PokeDex | Boris Vorobev" />
+    <meta property="og:description"
+        content="Development environment for web applications in React using Vite. Boilerplate in SASS for consistent interfaces." />
+    <meta property="og:url" content="https://github.com/borisvorobev/pokedex" />
+    <meta property="og:image" content="https://github.com/borisvorobev/pokedex/assets/og-image.png" />
+    <meta property="og:image:alt" content="Pokemon Trainer art" />
+    <!-- end -->
+
+    <title>PokeDex | Boris Vorobev</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pokemon {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
+            border-radius: 50%;
+            border: 8px solid black;
+            animation: spin 1s linear infinite;
+        }
+
+        .pokemon::before {
+            content: '';
+            position: absolute;
+            height: 8px;
+            width: 100px;
+            background: black;
+            top: 50px;
+            transform: translatey(-50%);
+        }
+
+        .pokemon::after {
+            content: '';
+            position: absolute;
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            background: white;
+            top: 50px;
+            left: 50px;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
+
+        }
+
+        /* Spin Animation */
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="pokemon" id="loader"></div>
+    </div>
+
+    <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>
