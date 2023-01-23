@@ -66,6 +66,7 @@ Original GameBoy design
 - favicon: https://www.favicon.cc/?action=icon&file_id=938500
 - css loader: https://codepen.io/trulymittal/pen/LMOJWv
 - css framework: https://luttje.github.io/css-pokemon-gameboy/
+- deploy: https://github.com/gitname/react-gh-pages
 
 
 Made with ❤️ by Boris Vorobev 👋🏻 [Get in touch!](https://github.com/borisvorobev)
