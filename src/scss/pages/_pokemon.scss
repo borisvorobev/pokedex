@@ -1,0 +1,134 @@
+body {
+  background-image: linear-gradient(
+      lighten(map-get($colors, supportDark2), 52%) 0.1em,
+      transparent 0.1em
+    ),
+    linear-gradient(
+      90deg,
+      lighten(map-get($colors, supportDark2), 52%) 0.1em,
+      transparent 0.1em
+    );
+  background-size: 3em 3em;
+  display: block;
+  margin-top: 15rem;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: map-get($accentColors, primary);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  left: 0;
+  height: 6rem;
+  padding: 2px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .to-home,
+    img {
+      max-height: 5rem;
+    }
+  }
+}
+
+.bordered {
+  border: 1px map-get($colors, supportDark2) solid;
+  border-radius: 10px;
+  box-shadow: 5px 5px lighten(map-get($colors, supportDark2), 52%);
+}
+
+.pokemon-information {
+  display: grid;
+  grid-template-areas: "sprite data" "description description" "more more";
+
+  .sprite {
+    grid-area: sprite;
+
+    img {
+      min-width: 300px;
+    }
+  }
+
+  .data {
+    grid-area: data;
+
+    .quick-information {
+      margin-bottom: 2rem;
+
+      .pokemon-name {
+        padding-inline: 1rem;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        align-items: center;
+        color: map-get($colors, supportLight1);
+        background-color: map-get($accentColors, danger);
+        border-bottom: lighten(map-get($accentColors, danger), 22%);
+
+        img {
+          height: 20px;
+          margin-right: 1ch;
+        }
+
+        .pokemon-number {
+          margin-right: 1ch;
+        }
+      }
+
+      p {
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        background-color: map-get($colors, supportLight1);
+      }
+    }
+
+    .detailed-information {
+      display: flex;
+      margin-bottom: 2rem;
+
+      .item {
+        border-top: 1rem solid map-get($accentColors, danger);
+        padding: 1rem;
+        display: flex;
+        margin-right: 2rem;
+
+        img {
+          min-height: 50px;
+          min-width: 50px;
+          aspect-ratio: initial;
+        }
+      }
+
+      .pokemon-stats {
+        margin-top: 2rem;
+        padding-block: 1rem;
+        span {
+          margin: 1rem;
+        }
+        hr {
+          margin-block: 1rem;
+          border: dotted 2px map-get($colors, supportDark2);
+        }
+      }
+    }
+  }
+
+  .description {
+    grid-area: description;
+    background-color: map-get($accentColors, danger);
+
+    p {
+      padding: 1rem;
+      margin: 2px 3rem;
+      background-color: map-get($colors, supportLight1);
+      border-inline: lighten(map-get($accentColors, danger), 22%);
+    }
+  }
+
+  .more {
+    grid-area: more;
+  }
+}
