@@ -1,3 +1,5 @@
+@use "sass:map";
+
 body {
   display: flex;
   align-items: center;
@@ -16,7 +18,7 @@ body {
 }
 
 .float-right {
-	float: right;
+  float: right;
 }
 
 footer {
@@ -24,11 +26,11 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: map-get($accentColors, danger);
+  background-color: map.get($accent-colors, danger);
   color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	.nes-pokeball, a { margin-left: 1rem; }
+  .nes-pokeball, a { margin-left: 1rem; }
 }

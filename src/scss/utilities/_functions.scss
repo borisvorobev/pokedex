@@ -1,26 +1,26 @@
 // get maps
-@function mediaQuery($key) {
-    @return map-get($mediaQuery, $key);
+@function mediaquery($key) {
+    @return map-get($mediaquery, $key);
 }
 @function breakpoint($key) {
-    @return map-get(mediaQuery("sizes"), $key);
+    @return map-get(mediaquery("sizes"), $key);
 }
 @function grid($key) {
     @return map-get($grid, $key);
 }
-@function fontSize($key) {
-    @return map-get($fontSizes, $key);
+@function font-size($key) {
+    @return map-get($font-sizes, $key);
 }
-@function accentColor($key) {
-    @return map-get($accentColors, $key);
+@function accent-color($key) {
+    @return map-get($accent-colors, $key);
 }
 @function color($key) {
     @return map-get($colors, $key);
 }
 
 // general
-@function isSVG($property) {
-    @if ($property == fill or $property == stroke) {
+@function is-svg($property) {
+    @if  $property == fill or $property == stroke {
         @return path;
     } @else {
         @return null;

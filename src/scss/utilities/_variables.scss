@@ -1,5 +1,9 @@
+/* stylelint-disable scss/no-global-function-names */
+@use "sass:map";
+@use "sass:color";
+
 // responsive
-$mediaQuery: (
+$mediaquery: (
     property: max-width,
     unit: px,
     sizes: (
@@ -14,22 +18,22 @@ $mediaQuery: (
 // rfs config
 $rfs-rem-value: 10;
 $rfs-factor: 5;
-$rfs-breakpoint: map-get(map-get($mediaQuery, sizes), xl);
+$rfs-breakpoint: map.get(map.get($mediaquery, sizes), xl);
 
 // UI
 $grid: (
-    containerDefault: 1320px,
-    containerXxl: 1140px,
-    containerXl: 960px,
-    containerLg: 720px,
-    containerMd: 540px,
+    containerdefault: 1320px,
+    containerxxl: 1140px,
+    containerxl: 960px,
+    containerlg: 720px,
+    containermd: 540px,
     gutter: 30px
 );
-$fontSizes: (
+$font-sizes: (
     h1: 7.8rem,
     body: 1.8rem
 );
-$accentColors: (
+$accent-colors: (
     primary: #00B2FF,
     secondary: #FFDD35,
     success: #01CC88,
@@ -37,14 +41,13 @@ $accentColors: (
     danger: #DC3545
 );
 $colors: (
-    primary: map-get($accentColors, primary),
-    secondary: map-get($accentColors, secondary),
-	primaryLight: lighten(map-get($accentColors, primary), 22%),
-	primaryDark: darken(map-get($accentColors, primary), 12%),
-    supportLight1: #FFF,
+    primary: map.get($accent-colors, primary),
+    secondary: map.get($accent-colors, secondary),
+	primaryDark: darken(map.get($accent-colors, primary), 12%),
+    support-light-1: #FFF,
     supportLight2: #E9F0F4,
     supportDark1: #000,
-    supportDark2: #171717,
+    support-dark-2: #171717,
     supportDark3: #171823
 );
 

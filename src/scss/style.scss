@@ -11,14 +11,7 @@
 // components / widgets
 @import "components/button";
 
-// Global
-body {
-  background: linear-gradient(
-    247.12deg,
-    color("supportLight2") -0.29%,
-    color("supportLight1") 100%
-  );
-}
+@import "base/global";
 
 // pages specific styles
 @import "pages/home";

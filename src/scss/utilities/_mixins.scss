@@ -1,8 +1,11 @@
+@use "sass:map";
+
 // responsive
 @mixin breakpoint($size) {
-    @media (mediaQuery("property"): #{ 
+    /* stylelint-disable-next-line media-feature-name-no-unknown */
+    @media (mediaquery("property"): #{ 
             breakpoint($size) + 
-            mediaQuery("unit")
+            mediaquery("unit")
 		}
 	) {
         @content;
@@ -16,7 +19,8 @@
 
 // transitions and states
 @mixin transition($type, $properties...) {
-	$transition: map-get($transitions, $type);
+	$transition: map.get($transitions, $type);
+
     transition-property: $properties;
 
 	@each $property, $value in $transition {
@@ -28,13 +32,13 @@
     $onlyProperty: null,
     $typeTransition: button
 ) {
-    $isSVG: isSVG($onlyProperty);
+    $is-svg: is-svg($onlyProperty);
     $property: null;
     $value: null;
 
     @each $state, $stateValue in $states {
         @if $state == default {
-            @if $onlyProperty and $isSVG {
+            @if $onlyProperty and $is-svg {
                 path {@include transition($typeTransition, $onlyProperty)};
 
             } @else if $onlyProperty {
@@ -55,7 +59,7 @@
             }
             
             @if $state == default {
-                @if $isSVG {
+                @if $is-svg {
                     path {#{$property}: $value;};
 
                 } @else {
@@ -63,12 +67,12 @@
                 }
 
             } @else if $state == hover {
-                &:hover #{$isSVG} {
+                &:hover #{$is-svg} {
                     #{$property}: $value;
                 }
 
             } @else if $state == active {
-                &:active #{$isSVG} {
+                &:active #{$is-svg} {
                     #{$property}: $value;
                 }
             }

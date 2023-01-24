@@ -1,13 +1,16 @@
+@use "sass:color";
+@use "sass:map";
+
 body {
   background-image: linear-gradient(
-      lighten(map-get($colors, supportDark2), 52%) 0.1em,
-      transparent 0.1em
-    ),
+    map.get($colors, support-dark-2) 0.1em,
+    transparent 0.1em
+  ),
     linear-gradient(
-      90deg,
-      lighten(map-get($colors, supportDark2), 52%) 0.1em,
-      transparent 0.1em
-    );
+    90deg,
+    map.get($colors, support-dark-2) 0.1em,
+    transparent 0.1em
+  );
   background-size: 3em 3em;
   display: block;
   margin-top: 15rem;
@@ -15,7 +18,7 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: map-get($accentColors, primary);
+  background-color: map.get($accent-colors, primary);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -36,9 +39,10 @@ body {
 }
 
 .bordered {
-  border: 1px map-get($colors, supportDark2) solid;
+  border: 1px map.get($colors, support-dark-2) solid;
   border-radius: 10px;
-  box-shadow: 5px 5px lighten(map-get($colors, supportDark2), 52%);
+  /* stylelint-disable-next-line scss/no-global-function-names */
+  box-shadow: 5px 5px lighten(map.get($colors, support-dark-2), 52%);
 }
 
 .pokemon-information {
@@ -64,9 +68,9 @@ body {
         border-radius: 10px 10px 0 0;
         display: flex;
         align-items: center;
-        color: map-get($colors, supportLight1);
-        background-color: map-get($accentColors, danger);
-        border-bottom: lighten(map-get($accentColors, danger), 22%);
+        color: map.get($colors, support-light-1);
+        background-color: map.get($accent-colors, danger);
+        border-bottom: map.get($accent-colors, danger);
 
         img {
           height: 20px;
@@ -82,7 +86,7 @@ body {
         display: flex;
         padding: 1rem;
         border-radius: 0 0 10px 10px;
-        background-color: map-get($colors, supportLight1);
+        background-color: map.get($colors, support-light-1);
 
         span {
           background-color: #68A090;
@@ -117,7 +121,7 @@ body {
       margin-bottom: 2rem;
 
       .item {
-        border-top: 1rem solid map-get($accentColors, danger);
+        border-top: 1rem solid map.get($accent-colors, danger);
         padding: 1rem;
         display: flex;
         margin-right: 2rem;
@@ -135,9 +139,10 @@ body {
         span {
           margin: 1rem;
         }
+
         hr {
           margin-block: 1rem;
-          border: dotted 2px map-get($colors, supportDark2);
+          border: dotted 2px map.get($colors, support-dark-2);
         }
       }
     }
@@ -145,13 +150,13 @@ body {
 
   .description {
     grid-area: description;
-    background-color: map-get($accentColors, danger);
+    background-color: map.get($accent-colors, danger);
 
     p {
       padding: 1rem;
       margin: 2px 3rem;
-      background-color: map-get($colors, supportLight1);
-      border-inline: lighten(map-get($accentColors, danger), 22%);
+      background-color: map.get($colors, support-light-1);
+      border-inline: map.get($accent-colors, danger);
     }
   }
 

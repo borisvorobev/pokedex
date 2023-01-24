@@ -70,6 +70,7 @@
     "scss",
     ".module.scss"
   ],
-  "prettier.configPath": "./server/.prettierrc.json",
+  "stylelint.configFile": ".stylelintrc.json",
+  "prettier.configPath": ".prettierrc.json",
   "typescript.tsdk": "node_modules/typescript/lib",
 }
