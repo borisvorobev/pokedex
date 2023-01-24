@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignorePaths": [
+    "./.vscode/**",
+    "*/node_modules/**",
+    "dist/**",
+    "package-lock.json"
+  ],
+  "words": [
+    "Poké",
+    "pokeapi",
+    "pokeball",
+    "pokedex",
+    "Pokédex",
+    "predeploy",
+    "reduxjs",
+    "stylelint",
+    "svgr",
+    "Vorobev"
+  ]
+}

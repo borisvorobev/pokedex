@@ -1,18 +1,29 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { Pokemon, PokemonSpecies } from "./types";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import type { Pokemon, PokemonSpecies } from './types';
+
+const uniqByReduce = (array: string[]): string[] =>
+  array.reduce((acc: string[], cur: string) => {
+    if (!acc.includes(cur)) {
+      acc.push(cur);
+    }
+    return acc;
+  }, []);
 
 export const pokemonApi = createApi({
-  reducerPath: "pokemonApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/" }),
+  reducerPath: 'pokemonApi',
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
   endpoints: (builder) => ({
     getPokemonByName: builder.query<Pokemon, string>({
       query: (name) => `pokemon/${name}`,
       transformResponse: (response: Pokemon) => {
-        const saved = localStorage.getItem("pokedex-history") ?? "[]";
+        const saved = localStorage.getItem('pokedex-history') ?? '[]';
         const historyArray = JSON.parse(saved as string);
         if (Array.isArray(historyArray)) {
           historyArray.push(response.name);
-          localStorage.setItem("pokedex-history", JSON.stringify([...new Set(historyArray)]));
+          localStorage.setItem(
+            'pokedex-history',
+            JSON.stringify([...uniqByReduce(historyArray)]),
+          );
         }
         return response;
       },
@@ -20,14 +31,17 @@ export const pokemonApi = createApi({
     getPokemonSpeciesByName: builder.query<PokemonSpecies, string>({
       query: (name) => `pokemon-species/${name}`,
     }),
-    searchPokemonByName: builder.mutation< Pokemon, string>({
+    searchPokemonByName: builder.mutation<Pokemon, string>({
       query: (name) => `pokemon/${name}`,
-      transformResponse: (response: Pokemon ) => {
-        const saved = localStorage.getItem("pokedex-history") ?? "[]";
+      transformResponse: (response: Pokemon) => {
+        const saved = localStorage.getItem('pokedex-history') ?? '[]';
         const historyArray = JSON.parse(saved as string);
         if (Array.isArray(historyArray)) {
           historyArray.push(response.name);
-          localStorage.setItem("pokedex-history", JSON.stringify([...new Set(historyArray)]));
+          localStorage.setItem(
+            'pokedex-history',
+            JSON.stringify([...uniqByReduce(historyArray)]),
+          );
         }
         return response;
       },

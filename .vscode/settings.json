@@ -1,3 +1,75 @@
 {
-  "Codegeex.EnableExtension": false
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.language": "en",
+  "cSpell.words": [],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#ffaa0080"
+    },
+    {
+      "column": 120,
+      "color": "#ff0000"
+    }
+  ],
+  "editor.tabSize": 2,
+  "editor.wordWrapColumn": 120,
+  "editor.wordWrap": "wordWrapColumn",
+  "emmet.excludeLanguages": [],
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "markdown": "html",
+    "javascript": "javascriptreact"
+  },
+  "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.run": "onSave",
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "coverage": true
+  },
+  "html.autoClosingTags": true,
+  "javascript.autoClosingTags": true,
+  "javascript.suggest.autoImports": true,
+  "javascript.format.enable": false,
+  "javascript.validate.enable": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "scss.validate": false,
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "stylelint.validate": [
+    "scss",
+    ".module.scss"
+  ],
+  "prettier.configPath": "./server/.prettierrc.json",
+  "typescript.tsdk": "node_modules/typescript/lib",
 }

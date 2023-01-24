@@ -24,24 +24,26 @@
 
 ## :page_with_curl: About
 
-The Pokedex is an app which the user can view a list of Pokemons, search and view the details of a specific Pokemon. To get the Pokemons data it was used the [PokéAPI](https://pokeapi.co/).
+The Pokédex is an app which the user can view a list of Pokémon, search and view the details of a specific Pokémon. To get the Pokémon data it was used the [PokéAPI](https://pokeapi.co/).
+
+I used React Toolkit Query to manage the state. For the styles SASS. I leveraged the heavy use of the cache given by RTK Query to make requests fast. For the History functionality I used local storage API
 
 ## Assignment
 
 ### The Problem
 
-Ash and his friends are on a new adventure to catch even more Pokemon! Before they
-set off on this journey they need some tools. As we all know every great Pokemon
-trainer needs a reliable Pokedex to identify Pokemon. It’s a good thing they have you!
-Ash has asked if you would be willing to build him a brand new Pokedex with core
+Ash and his friends are on a new adventure to catch even more Pokémon! Before they
+set off on this journey they need some tools. As we all know every great Pokémon
+trainer needs a reliable Pokédex to identify Pokémon. It’s a good thing they have you!
+Ash has asked if you would be willing to build him a brand new Pokédex with core
 features and a couple of enhancements.
 
 ### Business Requirements
 
 Please attempt to implement the following business requirements:
 
-- Use the Pokemon API to make API requests for data https://pokeapi.co/docs/v2.
-- Able to search for any Pokemon.
+- Use the Pokémon API to make API requests for data https://pokeapi.co/docs/v2.
+- Able to search for any Pokémon.
 - Able to see a history of what has been searched and revisit at anytime.
 
 ### Technical Requirements
@@ -67,7 +69,6 @@ comments or thoughts about the project are also welcome.
 This project was developed with the following technologies:
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [React Navigation](https://reactnavigation.org/)
 - [Axios](https://github.com/axios/axios)
 - [VS Code](https://code.visualstudio.com/) with [EditorConfig](https://editorconfig.org/), [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
 
@@ -98,7 +99,7 @@ This project was developed with the following technologies:
 
 ### :thought_balloon: Inspiration
 
-Original GameBoy design
+Original GameBoy design.
 
 
 ### Acknowledgments
